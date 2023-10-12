@@ -1,0 +1,43 @@
+.user-input{
+    padding:6px 12px;
+    width: 300px;
+    margin-bottom: 10px;
+}
+.login-container{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+}
+.login-heading{
+    color: white;
+}
+.login-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(87, 87, 160);
+ height: auto;
+ width: 400px;
+ padding: 20px 40px;
+}
+.signUpBtn{
+    background-color: green;
+    border: 0;
+    font-size: 20px;
+    color: white;
+    font-family: "Roboto";
+    width: 300px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+   
+}
+.signUpBtn:hover{
+    background-color: rgb(5, 162, 5);
+}
+.error{
+    color: rgb(228, 15, 15);
+    font-size: 18px;
+}

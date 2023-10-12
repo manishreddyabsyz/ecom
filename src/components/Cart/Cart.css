@@ -1,0 +1,20 @@
+.cart-container{
+    margin-top: 60px;
+    margin-bottom: 60px;
+    min-height: 80vh;
+}
+.cart-image{
+    width: 300px;
+    height: 400px;
+}
+.cart-body{
+    border: 1px solid gray;
+    margin-bottom: 10px;
+    padding: 10px;
+    
+}
+@media screen and (max-width:600px) {
+    .cart-container{
+        margin-top: 0px;
+    }
+}

@@ -1,0 +1,18 @@
+.single-product-container{
+    margin-top: 60px;
+}
+.quantity{
+    font-size: 20px;
+    
+}
+.message{
+    color: green;
+    padding-top: 5px;
+    font-family:"Roboto";
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.single-product-image{
+    height: 400px;
+}

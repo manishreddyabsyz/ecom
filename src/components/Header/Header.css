@@ -1,0 +1,49 @@
+.header-container {
+    background-color:#0d6efd; 
+    padding: 20px;
+    
+  }
+  .logo {
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+  }
+  .links-container {
+    width: 500px;
+  }
+  header .nav-link {
+      font-weight: 700;
+      color: #fff;
+      border-radius: 0;
+      font-size: 16px;
+    text-decoration: none;
+  }
+  header .nav-link-active {
+    background-color: rgb(13, 13, 13);
+      font-weight: 700;
+      color: #fff;
+      border-radius: 5px;
+      font-size: 16px;
+    padding: 5px 8px;
+    text-decoration: none;
+  }
+  header .cart{
+    background-color: rgb(14, 14, 13);
+    
+  }
+  header .nav-link:hover{
+    color: rgb(2, 2, 52);
+  }
+  @media screen and (max-width:600px){
+    .header-container{
+      display: none;
+    }
+    .header-mobileview-container{
+      display: flex;
+    }
+  }
+  @media screen and (min-width:601px){
+    .header-mobileview-container{
+      display: none;
+    }
+  }

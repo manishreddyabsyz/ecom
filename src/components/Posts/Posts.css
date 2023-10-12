@@ -1,0 +1,23 @@
+.posts-container{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.post-card{
+    border: 2px solid gray;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    height: auto;
+    width: auto;
+
+}
+.loader{
+    text-align: center;
+}
+@media screen and (max-width:650px){
+    .post-card{
+        height: 310px;
+    }
+    
+}
