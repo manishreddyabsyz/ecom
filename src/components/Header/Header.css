@@ -34,6 +34,9 @@
   header .nav-link:hover{
     color: rgb(2, 2, 52);
   }
+  .logout{
+    font-weight: bold !important;
+  }
   @media screen and (max-width:600px){
     .header-container{
       display: none;

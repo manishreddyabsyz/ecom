@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import "./Posts.css"
-import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
+
 const Posts = () => {
   const[posts,setPosts]=useState([])
   const[loader,setLoader]=useState(true)
@@ -25,7 +26,7 @@ const Posts = () => {
 
   return (
     <>
-    <Header />
+   <Header />
     <main className="posts-container">
    
     <div className="pg-header">
@@ -45,8 +46,8 @@ const Posts = () => {
           <div className='col-6'>
             <div className='post-card'>
               <div className='card-body'>
-                <h5>{item.title}</h5>
-                <p>{item.body}</p>
+                <h5 className='posts-title'>{item.title}</h5>
+                <p className='posts-description'>{item.body}</p>
                 </div>
               </div>
             </div>
@@ -60,7 +61,7 @@ const Posts = () => {
     </div>
 
   </main>
-  <Footer />
+ <Footer />
   </>
   )
 }

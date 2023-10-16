@@ -32,7 +32,7 @@ const Products = () => {
                     <p>{item.details}</p>
                     <div className="d-flex justify-content-between align-items-center">
                       <h6>
-                        Price:<span className="price">{item.price}</span>
+                        Price:<span className="price">${item.price}</span>
                       </h6>
                       <Link  className="details btn btn-primary" to={`/products/${item.id}`}>
                         Details &#8594;

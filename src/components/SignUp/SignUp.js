@@ -1,37 +1,50 @@
 import React from "react";
 import "./SignUp.css"
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 const SignUp = () => {
-    const[formData,setFormData]=useState({email:"",name:"",password:"",confirmPassword:""})
-    const navigate=useNavigate()
+    const[formData,setFormData]=useState({name:"",password:""})
+    const isUserLoggedIn=JSON.parse(localStorage.getItem("signupdata"))
+
+  const navigate=useNavigate()
+  useEffect(()=>{
+    console.log("data",isUserLoggedIn)
+      if(isUserLoggedIn!==null){
+       console.log("data")
+       return navigate("/")
+      }
+  },[isUserLoggedIn,navigate])
     const changeHandler=(e)=>{
         setFormData({...formData,[e.target.name]:e.target.value})
+    }
+    const validatePassword = (password) => {
+      // Define regular expressions for password criteria
+      const hasUpperCase = /[A-Z]/.test(password);
+      const hasLowerCase = /[a-z]/.test(password);
+      const hasNumber = /\d/.test(password);
+      const hasSpecialChar = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password);
+      const isLongEnough = password.length >= 8;
+  
+      // Check if all criteria are met
+      const isStrongPassword = hasUpperCase && hasLowerCase && hasNumber && hasSpecialChar && isLongEnough;
+       return isStrongPassword
     }
     const[errors,setErrors]=useState({})
    const validateForm=()=>{
     const newErrors={}
-    if (!formData.email) {
-      newErrors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Invalid email address';
-    }
+    let result=validatePassword(formData.password)
     if(!formData.name){
       newErrors.name="Name can't  be empty"
      
     }
-     
-     if(!formData.password){
+    if (!formData.password){
       newErrors.password="Password can't be empty"
+    } 
+     else if(!result){
+      newErrors.password="Password must be strong"
       }
-    else if(formData.password.length<8){
-      newErrors.password="Passoword length must be 8 or more"
-     
-    }
-    if(formData.confirmPassword!==formData.password){
-      newErrors.confirmpassword="Password and Confirmpassword must be same"
-      
-    }
+   
+    
     setErrors(newErrors);
 
     return Object.keys(newErrors).length === 0;
@@ -42,31 +55,36 @@ const SignUp = () => {
         e.preventDefault()
         if(validateForm()){
           localStorage.setItem("signupdata",JSON.stringify(formData))
+          navigate("/")
+          setFormData({
+            email:"",
+            name:"",
+            password:"",
+            confirmpassword:""
+          })
         }
+       
+       
        }
+
+       
+
+
   return (
     <main className="login-container">
       <div className="login-card">
       <h1 className="login-heading">LOGIN</h1>
       
         <form onSubmit={submitHandler}>
-          <div>
-          <input
-            type="email"
-            placeholder="Enter Your Email"
-            className="user-input"
-            name="email"
-            onChange={changeHandler}
-          />
-          {errors.email && <p className="error">{errors.email}</p>}
-          </div>
+          
           <div>
           <input
             type="text"
-            placeholder="Enter Your name"
+            placeholder="User name"
             className="user-input"
             name="name"
             onChange={changeHandler}
+            value={formData.name}
           />
           {errors.name && <p className="error">{errors.name}</p>}
           </div>
@@ -79,21 +97,14 @@ const SignUp = () => {
             className="user-input"
             name="password"
             onChange={changeHandler}
+            value={formData.password}
           />
           {errors.password && <p className="error">{errors.password}</p>}
            </div>
-           <div>
+           
 
            
-          <input
-            type="text"
-            placeholder="Confirm Password"
-            className="user-input"
-            name="confirmPassword"
-            onChange={changeHandler}
-          />
-          {errors.confirmpassword && <p className="error">{errors.confirmpassword}</p>}
-          </div>
+          
           <input type="submit" value="Login" className="signUpBtn" />
         </form>
         </div>

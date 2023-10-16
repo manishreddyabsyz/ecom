@@ -8,6 +8,7 @@ import PRODUCTS from "../Data/data";
 import "./SingleProduct.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+
 const SingleProduct = ({ getItems }) => {
   const [click, setClick] = useState(false);
 
@@ -43,7 +44,7 @@ const SingleProduct = ({ getItems }) => {
   };
   return (
     <>
-    <Header />
+   <Header />
     <main className="single-product-container">
       <div className="pg-header">
         <div className="container d-flex justify-content-between">
@@ -81,7 +82,7 @@ const SingleProduct = ({ getItems }) => {
         </div>
       </div>
     </main>
-    <Footer />
+   <Footer />
     </>
   );
 };

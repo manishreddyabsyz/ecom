@@ -2,8 +2,9 @@ import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GlobalInfo } from "../../App";
 import "./Cart.css";
-import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+
 const Cart = () => {
   const {cartList,setCartList} = useContext(GlobalInfo);
   let [updatedCartList, setUpdatedCartList] = useState(cartList);
@@ -52,7 +53,7 @@ const Cart = () => {
   
   return (
     <>
-    <Header />
+   <Header />
     <main className="cart-container">
       <div className="pg-header">
         <div className="container">
@@ -79,7 +80,7 @@ const Cart = () => {
 
                       <button
                         className="btn btn-dark"
-                        onClick={() =>
+                        onClick={() => 
                           updateQuantity(item,+1)
                         }
                       >
@@ -131,7 +132,7 @@ const Cart = () => {
         )}
       </div>
     </main>
-    <Footer />
+  <Footer />
     </>
   );
 };

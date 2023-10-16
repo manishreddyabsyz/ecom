@@ -15,6 +15,14 @@
 .loader{
     text-align: center;
 }
+.posts-title{
+    text-transform: capitalize;
+    font-size: 25px;
+    height: 62px;
+}
+.posts-description{
+    height: 60px;
+}
 @media screen and (max-width:650px){
     .post-card{
         height: 310px;

@@ -2,10 +2,11 @@ import React from 'react'
 import "./About.css"
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
+
 const About = () => {
   return (
     <>
-    <Header />
+  <Header />
     <main className="about-container">
       <div className="pg-header">
         <div className="container">
@@ -29,7 +30,7 @@ const About = () => {
         </div>
       </div>
     </main>
-    <Footer />
+   <Footer />
     </>
   )
 }

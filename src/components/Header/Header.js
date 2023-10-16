@@ -22,6 +22,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 
 import HomeIcon from '@mui/icons-material/Home';
+// import { useEffect } from "react";
 
 const Header = () => {
   const { cartList } = useContext(GlobalInfo);
@@ -29,6 +30,11 @@ const Header = () => {
   const [state, setState] = React.useState({
     left: false,
   });
+
+ const logout=()=>{
+    localStorage.removeItem("signupdata")
+    window.location.reload(false)
+ }
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -141,6 +147,8 @@ const Header = () => {
                 {cartList.length}
               </span>
             </NavLink>
+          <button className="btn btn-primary logout" onClick={logout}>Logout</button>
+            
           </div>
         </div>
       </div>
