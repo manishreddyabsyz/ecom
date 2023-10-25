@@ -2,8 +2,15 @@ import React from "react";
 import "./Home.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-
+const apiKey = process.env.REACT_APP_API_KEY;
 const Home = () => {
+  
+    if (apiKey==="Manish"){
+      console.log("success")
+    }
+    else{
+      console.log("fail")
+    }
   return (
     <>
    <Header />

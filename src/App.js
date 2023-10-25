@@ -13,6 +13,7 @@ import PRODUCTS from "./components/Data/data";
 import SignUp from "./components/SignUp/SignUp";
 import Notfound from "./components/NotFound/Notfound";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import Admin from "./components/Admin/Admin";
 
 
 export const GlobalInfo = createContext();
@@ -41,6 +42,7 @@ function App() {
             <Route path="/products/:productId" element={<SingleProduct getItems={cartItems} />} />
             <Route path="/posts" element={<Posts />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/admin" element={<Admin/>}/>
             <Route path="*" element={<Notfound />} />
           </Route>
          

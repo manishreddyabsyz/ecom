@@ -1,0 +1,30 @@
+
+.admin-header{
+    background-color:#e6e6e6 ;
+    padding: 60px 0px;
+    margin-top: 0px;
+    width: 100%;
+}
+
+.css-129usyd{
+    padding: 0px !important;
+}
+.css-4fa1cs{
+    padding: 0px !important;
+}
+.add-btn{
+    text-align: right ;
+    margin-right: 100px
+}
+.product-input{
+    margin-bottom: 20px !important;
+    padding: 8px;
+   
+    width: 50%;
+}
+label{
+    width: 150px;
+}
+.form-container-addproduct{
+    margin-top: 40px;
+}

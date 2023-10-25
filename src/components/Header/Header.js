@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import {  NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { GlobalInfo } from "../../App";
 import "./Header.css";
@@ -10,18 +10,18 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import InfoIcon from '@mui/icons-material/Info';
-import Drawer from '@mui/material/Drawer';
-import CategoryIcon from '@mui/icons-material/Category';
-import List from '@mui/material/List';
-import ArticleIcon from '@mui/icons-material/Article';
+import InfoIcon from "@mui/icons-material/Info";
+import Drawer from "@mui/material/Drawer";
+import CategoryIcon from "@mui/icons-material/Category";
+import List from "@mui/material/List";
+import ArticleIcon from "@mui/icons-material/Article";
 
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
 
-import HomeIcon from '@mui/icons-material/Home';
+import HomeIcon from "@mui/icons-material/Home";
 // import { useEffect } from "react";
 
 const Header = () => {
@@ -31,15 +31,15 @@ const Header = () => {
     left: false,
   });
 
- const logout=()=>{
-    localStorage.removeItem("signupdata")
-    window.location.reload(false)
- }
+  const logout = () => {
+    localStorage.removeItem("signupdata");
+    window.location.reload(false);
+  };
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
-      event.type === 'keydown' &&
-      (event.key === 'Tab' || event.key === 'Shift')
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
     ) {
       return;
     }
@@ -54,34 +54,31 @@ const Header = () => {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-     <List>
+      <List>
         {[
-          { text: 'Home', link: '/',icon:<HomeIcon/> },
-          { text: 'About', link: '/about',icon:<InfoIcon /> },
-          { text: 'Products', link: '/products',icon:<CategoryIcon/> },
-          { text: 'Posts', link: '/posts',icon:<ArticleIcon/> },
-          {text:"Cart",link:'/cart',icon:<ShoppingCartIcon/>}
+          { text: "Home", link: "/", icon: <HomeIcon /> },
+          { text: "About", link: "/about", icon: <InfoIcon /> },
+          { text: "Products", link: "/products", icon: <CategoryIcon /> },
+          { text: "Posts", link: "/posts", icon: <ArticleIcon /> },
+          { text: "Cart", link: "/cart", icon: <ShoppingCartIcon /> },
         ].map((item, index) => (
           <ListItem key={item.text} disablePadding>
             <ListItemButton>
-              <ListItemIcon>
-                {item.icon}
-              </ListItemIcon>
+              <ListItemIcon>{item.icon}</ListItemIcon>
               <ListItemText>
-              <NavLink
-              to={item.link}
-              className={(navData) =>
-                navData.isActive ? "nav-link-active" : "nav-link"
-              }
-            >
-              {item.text}
-            </NavLink>
+                <NavLink
+                  to={item.link}
+                  className={(navData) =>
+                    navData.isActive ? "nav-link-active" : "nav-link"
+                  }
+                >
+                  {item.text}
+                </NavLink>
               </ListItemText>
             </ListItemButton>
           </ListItem>
         ))}
       </List>
-     
     </Box>
   );
 
@@ -147,8 +144,9 @@ const Header = () => {
                 {cartList.length}
               </span>
             </NavLink>
-          <button className="btn btn-primary logout" onClick={logout}>Logout</button>
-            
+            <button className="btn btn-primary logout" onClick={logout}>
+              Logout
+            </button>
           </div>
         </div>
       </div>
@@ -163,23 +161,26 @@ const Header = () => {
                 aria-label="menu"
                 sx={{ mr: 2 }}
               >
-                 <div>
-      <Button onClick={toggleDrawer('left', true)} style={{color:"white"}}>
-        <MenuIcon />
-      </Button>
-      <Drawer
-        anchor="left"
-        open={state['left']}
-        onClose={toggleDrawer('left', false)}
-      >
-        {list('left')}
-      </Drawer>
-    </div>
+                <div>
+                  <Button
+                    onClick={toggleDrawer("left", true)}
+                    style={{ color: "white" }}
+                  >
+                    <MenuIcon />
+                  </Button>
+                  <Drawer
+                    anchor="left"
+                    open={state["left"]}
+                    onClose={toggleDrawer("left", false)}
+                  >
+                    {list("left")}
+                  </Drawer>
+                </div>
               </IconButton>
               <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                 E-Com
               </Typography>
-              <Button color="inherit">Login</Button>
+              <Button color="inherit" onClick={logout}>Logout</Button>
             </Toolbar>
           </AppBar>
         </Box>
